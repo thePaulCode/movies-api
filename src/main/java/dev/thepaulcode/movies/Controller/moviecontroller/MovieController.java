@@ -16,23 +16,28 @@ import java.util.Optional;
 public class MovieController {
     @Autowired
     private MovieService movieService;
-
+    // Obter todos os filmes existentes no DB
     @GetMapping
     public ResponseEntity<List<Movie>> getAllMovies(){
         //return new ResponseEntity<String>("All Movies", HttpStatus.OK);
         return new ResponseEntity<List<Movie>>(movieService.allMovies(), HttpStatus.OK);
     }
-
+    // Obter filme por imdbId
     @GetMapping("/{imdbId}")
     public ResponseEntity<Optional<Movie>> getSingleMovie(@PathVariable("imdbId") String imdbId){
 
         return new ResponseEntity<Optional<Movie>>(movieService.singleMovie(imdbId), HttpStatus.OK);
     }
-
+    // Deletar filme por imdbId
     @DeleteMapping("/{imdbId}")
     public void deleteMovieById(@PathVariable String imdbId){
 
         movieService.deleteMovieById(imdbId);
+    }
+    // Inserir um novo filme no DB
+    @PutMapping
+    public void putMovie(@RequestBody Movie movie){
+        movieService.saveMovie(movie);
     }
 
 }

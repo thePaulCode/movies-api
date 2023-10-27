@@ -31,9 +31,9 @@ public class MovieService {
 
     }
 
-//    public void save(Movie movie){
-//        movieRepository.save();
-//    }
+    public void saveMovie(Movie movie){
+       movieRepository.save(movie);
+    }
 
 }
 
