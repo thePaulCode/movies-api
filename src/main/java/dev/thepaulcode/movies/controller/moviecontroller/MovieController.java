@@ -1,22 +1,25 @@
-package dev.thepaulcode.movies.Controller.moviecontroller;
+package dev.thepaulcode.movies.controller.moviecontroller;
 
 import dev.thepaulcode.movies.model.movie.Movie;
 import dev.thepaulcode.movies.service.movieservice.MovieService;
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/movies")
+@CrossOrigin(origins = "", allowedHeaders = "", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
+
 public class MovieController {
     @Autowired
     private MovieService movieService;
     // Obter todos os filmes existentes no DB
+
     @GetMapping
     public ResponseEntity<List<Movie>> getAllMovies(){
         //return new ResponseEntity<String>("All Movies", HttpStatus.OK);

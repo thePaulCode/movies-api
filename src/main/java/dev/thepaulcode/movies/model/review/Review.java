@@ -1,6 +1,5 @@
 package dev.thepaulcode.movies.model.review;
 
-import dev.thepaulcode.movies.Controller.reviewcontroller.ReviewController;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

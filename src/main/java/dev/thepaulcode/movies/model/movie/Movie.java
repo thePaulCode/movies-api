@@ -1,8 +1,6 @@
 package dev.thepaulcode.movies.model.movie;
 
-import dev.thepaulcode.movies.Controller.moviecontroller.MovieController;
 import dev.thepaulcode.movies.model.review.Review;
-import dev.thepaulcode.movies.service.movieservice.MovieService;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
